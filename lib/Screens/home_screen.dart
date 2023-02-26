@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:toonflix/Services/api_service.dart';
+import 'package:toonflix/widgets/login_state_widget.dart';
 import 'package:toonflix/widgets/webtoon_widget.dart';
 
 import '../models/webtoon_model.dart';
@@ -12,14 +13,14 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    print(webtoons);
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: AppBar(
         title: Text(
           "오늘의 웹툰",
           style: GoogleFonts.sunflower(
-              textStyle: TextStyle(fontSize: 28, fontWeight: FontWeight.w500)),
+              textStyle:
+                  const TextStyle(fontSize: 28, fontWeight: FontWeight.w500)),
         ),
         backgroundColor: Colors.white,
         foregroundColor: Colors.green,
@@ -37,17 +38,7 @@ class HomeScreen extends StatelessWidget {
                 Expanded(child: makeList(snapshot)),
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Row(
-                    children: [
-                      IconButton(
-                        icon: Icon(Icons.person),
-                        iconSize: 40,
-                        color: Colors.grey,
-                        onPressed: () {},
-                      ),
-                      Text("Log-in"),
-                    ],
-                  ),
+                  child: LoginStateButton(), // 좌측 하단 버튼
                 ),
                 const SizedBox(
                   height: 50,
