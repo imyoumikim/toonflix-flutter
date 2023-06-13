@@ -3,7 +3,6 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:toonflix/Services/api_service.dart';
 import 'package:toonflix/widgets/login_state_widget.dart';
 import 'package:toonflix/widgets/webtoon_widget.dart';
-
 import '../models/webtoon_model.dart';
 
 class HomeScreen extends StatelessWidget {
